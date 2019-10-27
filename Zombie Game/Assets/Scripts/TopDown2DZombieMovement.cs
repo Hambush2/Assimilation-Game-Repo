@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class TopDown2DCharacterController : MonoBehaviour
+public class TopDown2DZombieMovement : MonoBehaviour
 {
     public float speed = 5.0f;
     Rigidbody2D rigidbody2D;
-    public float slowRate = 0.2f;
+    public float slowRate = 0.5f;
 
     float x = 0.1f;
     float y = 0.1f;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -21,17 +20,14 @@ public class TopDown2DCharacterController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        y = Round(y);
         x = Round(x);
-        //float x = Input.GetAxis("Horizontal");
-        //float y = Input.GetAxis("Vertical");
+        y = Round(y);
 
-
-        if(Input.GetKey(KeyCode.UpArrow)==true)
+        if (Input.GetKey(KeyCode.W) == true)
         {
             y = 1;
         }
-        else if (Input.GetKey(KeyCode.DownArrow) == true)
+        else if (Input.GetKey(KeyCode.S) == true)
         {
             y = -1;
         }
@@ -39,23 +35,23 @@ public class TopDown2DCharacterController : MonoBehaviour
         {
             if (y > 0)
             {
-                    print(y);
-                    y = y - slowRate;
+                print(y);
+                y = y - slowRate;
 
             }
             if (y < 0)
             {
-                    print(y);
-                    y = y + slowRate;
+                print(y);
+                y = y + slowRate;
 
             }
         }
 
-        if (Input.GetKey(KeyCode.RightArrow) == true)
+        if (Input.GetKey(KeyCode.D) == true)
         {
             x = 1;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) == true)
+        else if (Input.GetKey(KeyCode.A) == true)
         {
             x = -1;
         }
@@ -63,14 +59,14 @@ public class TopDown2DCharacterController : MonoBehaviour
         {
             if (x > 0)
             {
-                    print(x);
-                    x = x - slowRate;
+                print(x);
+                x = x - slowRate;
 
             }
             if (x < 0)
             {
-                    print(x);
-                    x = x + slowRate;
+                print(x);
+                x = x + slowRate;
             }
         }
 
