@@ -13,10 +13,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Human Damage
+  - Zombie Health
+  - Zombie Damage
+  - Human Health
   - 
   - 
   - 
@@ -44,10 +44,10 @@ TagManager:
   - name: Ground
     uniqueID: 630728185
     locked: 0
-  - name: Player
+  - name: Zombie
     uniqueID: 678962833
     locked: 0
-  - name: Enemy
+  - name: Human
     uniqueID: 748932563
     locked: 0
   - name: FX
