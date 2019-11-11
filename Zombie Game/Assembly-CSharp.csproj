@@ -65,13 +65,18 @@
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\DestroyOnDie.cs" />
     <Compile Include="Assets\Scripts\HealthSystem.cs" />
+    <Compile Include="Assets\Scripts\HumanPlayer.cs" />
     <Compile Include="Assets\Scripts\MouseLookSmooth2D.cs" />
     <Compile Include="Assets\Scripts\SmoothFollow2D.cs" />
+    <Compile Include="Assets\Scripts\SmoothLookAtTarget.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
+    <Compile Include="Assets\Scripts\TimerEvent.cs" />
     <Compile Include="Assets\Scripts\TopDown2DCharacterController.cs" />
     <Compile Include="Assets\Scripts\TopDown2DZombieMovement.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
     <Compile Include="Assets\Scripts\ZombieBite.cs" />
+    <Compile Include="Assets\Scripts\ZombieMoveToward.cs" />
+    <Compile Include="Assets\Scripts\ZombieNPC.cs" />
     <Compile Include="Assets\Scripts\ZombieTurning.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Uni Stuff/SOFT166/Zombie-Game-Repo/Zombie Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
