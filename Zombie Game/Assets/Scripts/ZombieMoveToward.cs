@@ -35,14 +35,18 @@ public class ZombieMoveToward : MonoBehaviour
 
         for (int i = 0; i < hoomans.Length; i++)
         {
-            float distance = Vector3.Distance(hoomans[i].transform.position, transform.position);
-
-            if (distance < dist)
+            if (hoomans[i] != null)
             {
-                target = hoomans[i].transform;
-                dist = distance;
-            }
 
+
+                float distance = Vector3.Distance(hoomans[i].transform.position, transform.position);
+
+                if (distance < dist)
+                {
+                    target = hoomans[i].transform;
+                    dist = distance;
+                }
+            }
         }
     }
 }

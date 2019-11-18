@@ -17,6 +17,10 @@ GameObject:
   - component: {fileID: 3639830708745166971}
   - component: {fileID: 3401937324245211160}
   - component: {fileID: 3639830708745166968}
+  - component: {fileID: -2552798481143796393}
+  - component: {fileID: 2222812545793339582}
+  - component: {fileID: -258271410331402166}
+  - component: {fileID: -1370413905077266620}
   m_Layer: 0
   m_Name: Human
   m_TagString: Player
@@ -158,12 +162,23 @@ MonoBehaviour:
   onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: d3fe6de3575f36442a2c92b18add367f, type: 3}
-        m_MethodName: 
+      - m_Target: {fileID: 2222812545793339582}
+        m_MethodName: Spawn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -258271410331402166}
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -233,6 +248,64 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-2552798481143796393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639830708745166949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b0ac13e54f432a4396bc994b4944a84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  smoothing: 5
+  adjustmentAngle: 270
+  targetTag: Player
+--- !u!114 &2222812545793339582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639830708745166949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b64e3e6fcf4224c84a8ebd866ea727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 2171827906104979278, guid: 72794e00774499245966075bd5938737,
+    type: 3}
+  adjustmentAngle: 0
+--- !u!114 &-258271410331402166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639830708745166949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556110512e97e4942a075e714fb3dec7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-1370413905077266620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639830708745166949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43296b4e6e8137b4b8fd67b068c06b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adjustmentAngle: 0
+  prefabToSpawn: {fileID: 7004636126315172754, guid: fd3221b6611195e43a697c88ef2787de,
+    type: 3}
 --- !u!1 &3639830708818564969
 GameObject:
   m_ObjectHideFlags: 0

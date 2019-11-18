@@ -8,10 +8,11 @@ public class SmoothLookAtTarget : MonoBehaviour
     public Transform target;
     public float smoothing = 5.0f;
     public float adjustmentAngle = 270.0f;
+    public string targetTag = "Player";
     // Start is called before the first frame update
     void Start()
     {
-        hoomans = GameObject.FindGameObjectsWithTag("Player");
+        hoomans = GameObject.FindGameObjectsWithTag(targetTag);
     }
 
     // Update is called once per frame
@@ -41,13 +42,17 @@ public class SmoothLookAtTarget : MonoBehaviour
 
         for (int i = 0; i < hoomans.Length; i++)
         {
-            float distance = Vector3.Distance(hoomans[i].transform.position, transform.position);
-
-            if (distance < dist)
+            if (hoomans[i] != null)
             {
-                target = hoomans[i].transform;
-                dist = distance;
+                float distance = Vector3.Distance(hoomans[i].transform.position, transform.position);
+
+                if (distance < dist)
+                {
+                    target = hoomans[i].transform;
+                    dist = distance;
+                }
             }
+            
 
         }
     }

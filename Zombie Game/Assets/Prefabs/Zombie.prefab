@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: -77802625713206293}
   - component: {fileID: 8726564685361093746}
   - component: {fileID: -8206437857727417429}
+  - component: {fileID: -4589531105806296644}
+  - component: {fileID: -1497218655179860329}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Zombie Player
@@ -141,12 +143,23 @@ MonoBehaviour:
   onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: d3fe6de3575f36442a2c92b18add367f, type: 3}
-        m_MethodName: 
+      - m_Target: {fileID: -1497218655179860329}
+        m_MethodName: Spawn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -4589531105806296644}
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -266,3 +279,31 @@ MonoBehaviour:
   target: {fileID: 7004636126315172745, guid: fd3221b6611195e43a697c88ef2787de, type: 3}
   smoothing: 5
   adjustmentAngle: 270
+  targetTag: Player
+--- !u!114 &-4589531105806296644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2171827906104979278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556110512e97e4942a075e714fb3dec7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-1497218655179860329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2171827906104979278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b64e3e6fcf4224c84a8ebd866ea727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 3639830708745166949, guid: 87eda2b8bf49b964b9ae8c4a2bee34e2,
+    type: 3}
+  adjustmentAngle: 0

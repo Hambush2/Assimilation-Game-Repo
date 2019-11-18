@@ -19,6 +19,8 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //Input.GetMouseButton(0) for continous firing
         if (Input.GetMouseButtonDown(0))
         {
             if (!isFiring)

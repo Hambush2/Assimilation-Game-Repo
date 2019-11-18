@@ -62,7 +62,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BecomePlayerHuman.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
+    <Compile Include="Assets\Scripts\ControlSwapperPlayer.cs" />
+    <Compile Include="Assets\Scripts\ConversionSpawn.cs" />
     <Compile Include="Assets\Scripts\DestroyOnDie.cs" />
     <Compile Include="Assets\Scripts\HealthSystem.cs" />
     <Compile Include="Assets\Scripts\HumanPlayer.cs" />

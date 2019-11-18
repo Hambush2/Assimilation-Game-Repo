@@ -696,5 +696,20 @@ PrefabInstance:
       propertyPath: theCamera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 7004636126315172746, guid: fd3221b6611195e43a697c88ef2787de,
+        type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004636126315172746, guid: fd3221b6611195e43a697c88ef2787de,
+        type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004636126315172746, guid: fd3221b6611195e43a697c88ef2787de,
+        type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd3221b6611195e43a697c88ef2787de, type: 3}
