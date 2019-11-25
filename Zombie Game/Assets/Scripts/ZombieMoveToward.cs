@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class ZombieMoveToward : MonoBehaviour
 {
-    GameObject[] hoomans;
+    public List<GameObject> hoomanz = new List<GameObject>();
+     GameObject[] hoomans;
     public Transform target;
     public float speed = 5.0f;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        hoomans = GameObject.FindGameObjectsWithTag("Player");
+        //int len = GameObject.FindGameObjectsWithTag("HumanNPC").Length + 1;
+
+        //hoomans = new GameObject[GameObject.FindGameObjectsWithTag("HumanNPC").Length + 1];
+
+        OnDetectHoomans();
+        //hoomans[hoomans.Length - 1] = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
@@ -21,8 +29,35 @@ public class ZombieMoveToward : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, target.position, speed * 0.01f);
         }
+        
 
     }
+
+
+    public void OnDetectHoomans()
+    {
+        print("detecting new hoomans");
+        
+        Invoke("Delay", 0.5f);
+    }
+
+    void Delay()
+    {
+        hoomans = GameObject.FindGameObjectsWithTag("HumanNPC");
+        hoomanz.Clear();
+
+        for (int i = 0; i < hoomans.Length; i++)
+        {
+            hoomanz.Add(hoomans[i]);
+        }
+
+        hoomanz.Add(GameObject.FindGameObjectWithTag("Player"));
+
+
+
+        FindTarget();
+    }
+
 
     public void SetTarget(Transform newTarget)
     {
@@ -33,17 +68,17 @@ public class ZombieMoveToward : MonoBehaviour
     {
         float dist = 9999;
 
-        for (int i = 0; i < hoomans.Length; i++)
+        for (int i = 0; i < hoomanz.Count; i++)
         {
-            if (hoomans[i] != null)
+            if (hoomanz[i] != null)
             {
 
 
-                float distance = Vector3.Distance(hoomans[i].transform.position, transform.position);
+                float distance = Vector3.Distance(hoomanz[i].transform.position, transform.position);
 
                 if (distance < dist)
                 {
-                    target = hoomans[i].transform;
+                    target = hoomanz[i].transform;
                     dist = distance;
                 }
             }

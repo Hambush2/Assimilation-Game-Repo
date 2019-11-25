@@ -16,13 +16,15 @@ GameObject:
   - component: {fileID: 2171827906104979286}
   - component: {fileID: 2171827906104979285}
   - component: {fileID: -77802625713206293}
+  - component: {fileID: 7504573731974273578}
   - component: {fileID: 8726564685361093746}
   - component: {fileID: -8206437857727417429}
   - component: {fileID: -4589531105806296644}
   - component: {fileID: -1497218655179860329}
+  - component: {fileID: -7597722709546364160}
   m_Layer: 0
   m_Name: Zombie
-  m_TagString: Zombie Player
+  m_TagString: Zombie NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,7 +105,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -156,6 +158,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: -4589531105806296644}
         m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 670ed30912b256c45b2eee389128ae91, type: 2}
+        m_MethodName: Raise
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -250,6 +263,35 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: EnemySpawnedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &7504573731974273578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2171827906104979278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cc204415c0592d44b1d4a2c6331c28c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 670ed30912b256c45b2eee389128ae91, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8726564685361093746}
+        m_MethodName: OnDetectHoomans
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &8726564685361093746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3e443e931142f4fa926575be1cc256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoomanz: []
   target: {fileID: 7004636126315172745, guid: fd3221b6611195e43a697c88ef2787de, type: 3}
   speed: 5
 --- !u!114 &-8206437857727417429
@@ -307,3 +350,18 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 3639830708745166949, guid: 87eda2b8bf49b964b9ae8c4a2bee34e2,
     type: 3}
   adjustmentAngle: 0
+--- !u!114 &-7597722709546364160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2171827906104979278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43296b4e6e8137b4b8fd67b068c06b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adjustmentAngle: 0
+  prefabToSpawn: {fileID: 5019526762565746706, guid: 156da42b4604b464cbfc90970113d793,
+    type: 3}

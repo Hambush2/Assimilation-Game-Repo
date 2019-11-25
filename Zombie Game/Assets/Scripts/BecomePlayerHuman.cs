@@ -20,6 +20,8 @@ public class BecomePlayerHuman : MonoBehaviour
     }
     public void PlayerSpawn()
     {
+        print("Player Spawn Triggered");
+
         Vector3 rotationDeg = transform.eulerAngles;
         rotationDeg.z += adjustmentAngle;
 

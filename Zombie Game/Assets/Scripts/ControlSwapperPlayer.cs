@@ -6,21 +6,24 @@ public class ControlSwapperPlayer : MonoBehaviour
 {
     GameObject[] hoomans;
     public Transform target;
+    public string targetTag;
 
     // Start is called before the first frame update
     void Start()
     {
-        hoomans = GameObject.FindGameObjectsWithTag("Player");
+        hoomans = GameObject.FindGameObjectsWithTag(targetTag);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        hoomans = GameObject.FindGameObjectsWithTag(targetTag);
     }
 
     public void FindTarget()
     {
+        hoomans = GameObject.FindGameObjectsWithTag(targetTag);
+
         float dist = 9999;
 
         for (int i = 0; i < hoomans.Length; i++)
@@ -35,6 +38,8 @@ public class ControlSwapperPlayer : MonoBehaviour
 
         }
 
+
         target.transform.SendMessage("PlayerSpawn", SendMessageOptions.DontRequireReceiver);
+        print(target.transform);
     }
 }

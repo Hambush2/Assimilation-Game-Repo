@@ -8,11 +8,13 @@ public class SmoothLookAtTarget : MonoBehaviour
     public Transform target;
     public float smoothing = 5.0f;
     public float adjustmentAngle = 270.0f;
-    public string targetTag = "Player";
+    public string targetTag = "HumanNPC";
     // Start is called before the first frame update
     void Start()
     {
-        hoomans = GameObject.FindGameObjectsWithTag(targetTag);
+        hoomans = new GameObject[GameObject.FindGameObjectsWithTag("HumanNPC").Length + 1];
+        hoomans = GameObject.FindGameObjectsWithTag("HumanNPC");
+        hoomans[hoomans.Length - 1] = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
