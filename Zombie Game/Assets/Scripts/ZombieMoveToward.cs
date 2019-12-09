@@ -5,7 +5,7 @@ using UnityEngine;
 public class ZombieMoveToward : MonoBehaviour
 {
     public List<GameObject> hoomanz = new List<GameObject>();
-     GameObject[] hoomans;
+    GameObject[] hoomans;
     public Transform target;
     public float speed = 5.0f;
 
