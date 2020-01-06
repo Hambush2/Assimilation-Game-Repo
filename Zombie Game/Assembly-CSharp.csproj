@@ -74,6 +74,8 @@
     <Compile Include="Assets\Scripts\HumanNPC.cs" />
     <Compile Include="Assets\Scripts\HumanPlayer.cs" />
     <Compile Include="Assets\Scripts\MouseLookSmooth2D.cs" />
+    <Compile Include="Assets\Scripts\SafteyRadius.cs" />
+    <Compile Include="Assets\Scripts\ShootingRange.cs" />
     <Compile Include="Assets\Scripts\SmoothFollow2D.cs" />
     <Compile Include="Assets\Scripts\SmoothLookAtTarget.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />

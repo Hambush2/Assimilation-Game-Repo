@@ -3,42 +3,49 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-public class EnemyPathFinder : MonoBehaviour
+public class ShootingRange : MonoBehaviour
 {
-    //public Transform[] targets;
     private IAstarAI ai;
     public List<GameObject> hoomanz = new List<GameObject>();
     GameObject[] hoomans;
     public Transform target;
-    public string NPCTag;
-    public string playerTag;
+    public float retreatSpeed = 3.0f;
+    //public Transform testTarget;
     // Start is called before the first frame update
-    private void Start()
+    void Start()
     {
-        ai = GetComponent<IAstarAI>();
-        OnDetectHoomans();
+        
     }
 
     // Update is called once per frame
-    private void Update()
+    void Update()
     {
-        FindTarget();
-        if (target != null && ai !=null)
+        
+        if (target != null && ai != null)
         {
 
             ai.destination = target.position;
             ai.SearchPath();
+            print("pathing Retreat");
         }
-
     }
 
-    public void SetTarget(Transform newTarget)
+    private void Retreat()
     {
-        target = newTarget;
+        GetComponent<EnemyPathFinder>().enabled = false;
+
+        ai = GetComponent<IAstarAI>();
+        OnDetectHoomans();
+
+        
+
+
+        //get vector towards object, invert to move away, not functional
     }
 
     private void FindTarget()
     {
+        print("Finding Target");
         float dist = 9999;
 
         for (int i = 0; i < hoomanz.Count; i++)
@@ -53,23 +60,20 @@ public class EnemyPathFinder : MonoBehaviour
                 {
                     target = hoomanz[i].transform;
                     dist = distance;
-                    
                 }
             }
         }
-
     }
 
-    public void OnDetectHoomans()
+    private void RetreatEnd()
     {
-        print("detecting new hoomans");
-
-        Invoke("Delay", 0.5f);
+        GetComponent<EnemyPathFinder>().enabled = true;
+        GetComponent<ShootingRange>().enabled = false;
     }
 
-    void Delay()
+    private void FillList()
     {
-        hoomans = GameObject.FindGameObjectsWithTag(NPCTag);
+        hoomans = GameObject.FindGameObjectsWithTag("Zombie NPC");
         hoomanz.Clear();
 
         for (int i = 0; i < hoomans.Length; i++)
@@ -77,9 +81,27 @@ public class EnemyPathFinder : MonoBehaviour
             hoomanz.Add(hoomans[i]);
         }
 
-        hoomanz.Add(GameObject.FindGameObjectWithTag(playerTag));
+        hoomanz.Add(GameObject.FindGameObjectWithTag("Zombie Player"));
 
+        FindTarget();
+    }
 
+    public void OnDetectHoomans()
+    {
+        print("detecting retreat point");
+
+        Invoke("Delay", 0.25f);
+    }
+
+    void Delay()
+    {
+        hoomans = GameObject.FindGameObjectsWithTag("WorldObject");
+        hoomanz.Clear();
+
+        for (int i = 0; i < hoomans.Length; i++)
+        {
+            hoomanz.Add(hoomans[i]);
+        }
 
         FindTarget();
     }

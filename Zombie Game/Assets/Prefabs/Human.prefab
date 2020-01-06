@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 3639830708745166973}
   - component: {fileID: 3639830708745166971}
   - component: {fileID: 3639830708745166968}
-  - component: {fileID: -2552798481143796393}
   - component: {fileID: 2222812545793339582}
   - component: {fileID: -258271410331402166}
   - component: {fileID: -1370413905077266620}
@@ -25,6 +24,7 @@ GameObject:
   - component: {fileID: -3681167671152143510}
   - component: {fileID: -2076159144949322374}
   - component: {fileID: -4325261241495411401}
+  - component: {fileID: 4362171895978783250}
   m_Layer: 11
   m_Name: Human
   m_TagString: HumanNPC
@@ -251,22 +251,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-2552798481143796393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3639830708745166949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b0ac13e54f432a4396bc994b4944a84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  smoothing: 5
-  adjustmentAngle: 270
-  targetTag: ZombieNPC
 --- !u!114 &2222812545793339582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,12 +381,12 @@ MonoBehaviour:
   repathRate: 0.5
   canSearch: 1
   canMove: 1
-  speed: 3
+  speed: 5
   orientation: 1
   enableRotation: 1
   rotationSpeed: 10
   interpolatePathSwitches: 1
-  switchPathInterpolationSpeed: 5
+  switchPathInterpolationSpeed: 7.5
   targetCompatibility: {fileID: 0}
 --- !u!114 &-4325261241495411401
 MonoBehaviour:
@@ -426,6 +410,21 @@ MonoBehaviour:
   bezierTangentLength: 0.4
   offset: 0.2
   factor: 0.1
+--- !u!114 &4362171895978783250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639830708745166949}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72a551da88370844a8814898766e9696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoomanz: []
+  target: {fileID: 0}
+  retreatSpeed: 3
 --- !u!1 &3639830708818564969
 GameObject:
   m_ObjectHideFlags: 0

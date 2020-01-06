@@ -7,6 +7,7 @@ TagManager:
   - Zombie Player
   - Zombie NPC
   - HumanNPC
+  - WorldObject
   layers:
   - Default
   - TransparentFX
