@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: -2076159144949322374}
   - component: {fileID: -4325261241495411401}
   - component: {fileID: 4362171895978783250}
+  - component: {fileID: 7495743524433070499}
+  - component: {fileID: 8802090288559406359}
   m_Layer: 11
   m_Name: Human
   m_TagString: HumanNPC
@@ -162,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fe6de3575f36442a2c92b18add367f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 1
   onDie:
     m_PersistentCalls:
       m_Calls:
@@ -424,7 +426,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoomanz: []
   target: {fileID: 0}
-  retreatSpeed: 3
+  isStopped: 0
+  retreatSpeed: 100
+--- !u!58 &7495743524433070499
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639830708745166949}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.04, y: -0.32}
+  serializedVersion: 2
+  m_Radius: 12
+--- !u!114 &8802090288559406359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639830708745166949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5628c684420e6459ec22dcb564d494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1798872444595637441, guid: 17ccce12249da9444a6b29e3bc2a5ab9,
+    type: 3}
+  bulletSpawn: {fileID: 3639830708818564966}
+  fireTime: 0.5
 --- !u!1 &3639830708818564969
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +469,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3639830708818564966}
-  m_Layer: 0
+  - component: {fileID: 1039013616}
+  - component: {fileID: 1039013615}
+  m_Layer: 11
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -449,9 +486,41 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3639830708818564969}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.026, y: 0.692, z: 0}
+  m_LocalPosition: {x: -0.026, y: 0.7, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 3639830708745166974}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1039013616
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639830708818564969}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.04, y: -0.32}
+  serializedVersion: 2
+  m_Radius: 12
+--- !u!114 &1039013615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639830708818564969}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5628c684420e6459ec22dcb564d494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1798872444595637441, guid: 17ccce12249da9444a6b29e3bc2a5ab9,
+    type: 3}
+  bulletSpawn: {fileID: 3639830708818564966}
+  fireTime: 0.5

@@ -18,6 +18,7 @@ public class ZombieBite : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        print("nom!");
         other.transform.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
     }
 }

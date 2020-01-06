@@ -38,8 +38,14 @@ public class ControlSwapperPlayer : MonoBehaviour
 
         }
 
-
-        target.transform.SendMessage("PlayerSpawn", SendMessageOptions.DontRequireReceiver);
-        print(target.transform);
+        if (target != null)
+        {
+            target.transform.SendMessage("PlayerSpawn", SendMessageOptions.DontRequireReceiver);
+            print(target.transform);
+        }
+        else
+        {
+            print("die");
+        }
     }
 }

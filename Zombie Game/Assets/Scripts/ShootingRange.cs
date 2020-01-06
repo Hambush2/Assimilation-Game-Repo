@@ -9,6 +9,7 @@ public class ShootingRange : MonoBehaviour
     public List<GameObject> hoomanz = new List<GameObject>();
     GameObject[] hoomans;
     public Transform target;
+    public bool isStopped = false;
     public float retreatSpeed = 3.0f;
     //public Transform testTarget;
     // Start is called before the first frame update
@@ -21,16 +22,16 @@ public class ShootingRange : MonoBehaviour
     void Update()
     {
         
-        if (target != null && ai != null)
+        if (target != null && ai != null && !isStopped)
         {
-
+            
             ai.destination = target.position;
             ai.SearchPath();
             print("pathing Retreat");
         }
     }
 
-    private void Retreat()
+    public void Retreat()
     {
         GetComponent<EnemyPathFinder>().enabled = false;
 
