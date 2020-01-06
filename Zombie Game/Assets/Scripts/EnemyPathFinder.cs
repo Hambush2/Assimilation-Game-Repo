@@ -39,7 +39,7 @@ public class EnemyPathFinder : MonoBehaviour
 
     private void FindTarget()
     {
-        float dist = 9999;
+        float dist = 99999999999999;
 
         for (int i = 0; i < hoomanz.Count; i++)
         {
